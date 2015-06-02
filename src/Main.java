@@ -5,26 +5,21 @@ public class Main {
     public static void main(String[] args) {
         // Sorting speed out, creating array.
         //
-        int[] mass1 = creatArray();
-        System.out.println(bobble(mass1) + " ms");
-
-        int[] mass2 = creatArray();
-        System.out.println(selection(mass2) + " ms");
-
-        int[] mass3 = creatArray();
-        System.out.println(insertion(mass3) + " ms");
-        //teset commments
+        int[] massive = creatArray();
+        System.out.println(bobble(massive) + " ms");
+        System.out.println(selection(massive) + " ms");
+        System.out.println(insertion(massive) + " ms");
     }
 
 
 
     //Data methods.------------------------------------------------------------
     private static int[] creatArray() {
-        int[] mass = new int[100000];
-        for (int i = 0; i < mass.length; i++) {
-            mass[i] = (int) Math.round(Math.random() * 100000);
+        int[] array = new int[100000];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) Math.round(Math.random() * 100000);
         }
-        return mass;
+        return array;
     }
 
     private static long getTime() {
@@ -45,8 +40,8 @@ public class Main {
             }
         }
         long b = getTime();
-        float tt = (float)(b-a)/1000;
-        return tt;
+        float time = (float)(b-a)/1000;
+        return time;
     }
 
     private static float insertion(int[] mass) {
@@ -61,8 +56,8 @@ public class Main {
             }
         }
         long b = getTime();
-        float tt = (float)(b-a)/1000;
-        return tt;
+        float time = (float)(b-a)/1000;
+        return time;
     }
 
     private static float selection(int[] mass) {
@@ -78,7 +73,7 @@ public class Main {
             mass[i] = temp;
         }
         long b = getTime();
-        float tt = (float)(b-a)/1000;
-        return tt;
+        float time = (float)(b-a)/1000;
+        return time;
     }
 }
